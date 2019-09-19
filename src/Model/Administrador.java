@@ -17,8 +17,6 @@ public class Administrador extends Funcionario{
         this.senha = senha;
     }
     
-
-    
     
     
     public String getUsuario() {
