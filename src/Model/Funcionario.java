@@ -5,22 +5,46 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author hp
  */
-public abstract class Funcionario {
-     private String nome;
-     private String contacto;
-     private String email;
-     private String tipoDeDocumento;
-     private String nrDocumento;
+@Entity (name="Funcionario")
+@Table(name="Funcionario")
+public abstract class Funcionario implements Serializable{
+    @Id
+    @GeneratedValue
+    @Column(name="id_funcionario")
      private int id;
+    @Column(name="nome")
+     private String nome;
+     @Column(name="contacto")
+     private String contacto;
+     @Column(name="email")
+     private String email;
+     @Column(name="tipoDeDocumento")
+     private String tipoDeDocumento;
+     @Column(name="nrDocumento")
+     private String nrDocumento;
+     @Column(name="estado")
      private boolean estado;
+     @Column(name="dataNascimento")
      private Date dataNascimento;
+     @Column(name="sexo")
      private  String sexo;
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + "id=" + id + ", nome=" + nome + ", contacto=" + contacto + ", email=" + email + ", tipoDeDocumento=" + tipoDeDocumento + ", nrDocumento=" + nrDocumento + ", estado=" + estado + ", dataNascimento=" + dataNascimento + ", sexo=" + sexo + '}';
+    }
 
     public Funcionario(String nome, String contacto, String email, String tipoDeDocumento, String nrDocumento, Date dataNascimento, String sexo) {
         this.nome = nome;
@@ -114,11 +138,11 @@ public abstract class Funcionario {
         this.email = email;
     }
 
-    public String getTipoDeDocumento() {
+    public String getTipo() {
         return tipoDeDocumento;
     }
 
-    public void setTipoDeDocumento(String tipo) {
+    public void setTipo(String tipo) {
         this.tipoDeDocumento = tipo;
     }
 
