@@ -114,11 +114,11 @@ public abstract class Funcionario {
         this.email = email;
     }
 
-    public String getTipo() {
+    public String getTipoDeDocumento() {
         return tipoDeDocumento;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipoDeDocumento(String tipo) {
         this.tipoDeDocumento = tipo;
     }
 
