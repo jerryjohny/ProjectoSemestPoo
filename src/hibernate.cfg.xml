@@ -52,5 +52,8 @@ Contributor(s):
     <mapping class="Model.Operador"/>
     <mapping class="Model.Gestor"/>
     <mapping class="Model.Administrador"/>
+    <mapping class="Model.Alojado"/>
+    <mapping class="Model.Parente"/>
+    <mapping class="Model.Centro"/>
   </session-factory>
 </hibernate-configuration>

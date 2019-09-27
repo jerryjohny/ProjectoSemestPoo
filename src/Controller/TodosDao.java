@@ -6,7 +6,10 @@
 package Controller;
 
 import Arquivo.NewHibernateUtil;
-import Model.Operador;
+import Model.Alojado;
+import Model.Centro;
+import Model.Funcionario;
+import Model.Parente;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -36,17 +39,80 @@ public class TodosDao<T> {
             sf.close();
         }
     }
-   
-   public static List Listar(){
+  ////////////////////////////////////////////////////////////////////////////// 
+   public static List listarFuncionarios(){
        SessionFactory sf = NewHibernateUtil.getSessionFactory();
        Session s = sf.openSession(); 
-       List<Operador> lista =null;
+       List<Funcionario> lista =null;
        try {
            lista =  s.createQuery("from Funcionario").list();
        } catch (Exception e) {
        }finally{
-s.close();
+        s.close();
        }
        return lista;
    }
+   /////////////////////////////////////////////////////////////////////////////
+   public static List listarParentes(){
+       SessionFactory sf = NewHibernateUtil.getSessionFactory();
+       Session s = sf.openSession(); 
+       List<Parente> lista =null;
+       try {
+           lista =  s.createQuery("from Parente").list();
+       } catch (Exception e) {
+       }finally{
+        s.close();
+       }
+       return lista;
+   }
+   /////////////////////////////////////////////////////////////////////////////
+   
+      /////////////////////////////////////////////////////////////////////////////
+   public static List listarAlojado(){
+       SessionFactory sf = NewHibernateUtil.getSessionFactory();
+       Session s = sf.openSession(); 
+       List<Alojado> lista =null;
+       try {
+           lista =  s.createQuery("from Alojado").list();
+       } catch (Exception e) {
+       }finally{
+        s.close();
+       }
+       return lista;
+   }
+   /////////////////////////////////////////////////////////////////////////////
+   
+   /////////////////////////////////////////////////////////////////////////////
+   public static List listarCentro(){
+       SessionFactory sf = NewHibernateUtil.getSessionFactory();
+       Session s = sf.openSession(); 
+       List<Centro> lista =null;
+       try {
+           lista =  s.createQuery("from Centro").list();
+       } catch (Exception e) {
+       }finally{
+        s.close();
+       }
+       return lista;
+   }
+   /////////////////////////////////////////////////////////////////////////////
+   public boolean deletar(T t){
+        SessionFactory sf = NewHibernateUtil.getSessionFactory();
+        Session s = sf.openSession();
+        Transaction tx = s.beginTransaction();
+        
+        try {
+            s.delete(t);
+            tx.commit();
+            return true;
+                    
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+            return false;
+        }
+      finally {
+            s.close();
+            sf.close();
+        }
+    }
 }

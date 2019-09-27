@@ -2,21 +2,33 @@
 package Model;
 
 import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author hp
  */
+@Entity
 public class Centro {
-
-     private String nome;
-     private String id;
-     private String localizacao;
-     private boolean lotado;
-     private int lotacao;
-     private ArrayList<Operador> operadores;
-     private ArrayList<Gestor> gestores;
-     private ArrayList<Alojado> alojados;
+    @Id
+    @Column
+    private String id;
+    @Column 
+    private String nome;
+    @Column
+    private String localizacao;
+    @Column
+    private boolean lotado;
+    @Column
+    private int lotacao;
+    @Column
+    private ArrayList<Operador> operadores;
+    @Column
+    private ArrayList<Gestor> gestores;
+    @Column
+    private ArrayList<Alojado> alojados;
 
     public Centro(String nome, String id, String localizacao, int lotacao, ArrayList<Operador> operadores, ArrayList<Gestor> gestores, ArrayList<Alojado> alojados) {
         this.nome = nome;
@@ -97,16 +109,5 @@ public class Centro {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
- 
-     
-     
-     
-      
-     
-     
-     
-     
-     
-     
+    
 }

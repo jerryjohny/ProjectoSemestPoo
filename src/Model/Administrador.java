@@ -2,13 +2,18 @@
 package Model;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 /**
  *
  * @author hp
  */
+@Entity
 public class Administrador extends Funcionario{
+    @Column
     private String usuario;
+    @Column
     private String senha;
 
     public Administrador(String nome, String contacto, String email, String tipoDeDocumento, String nrDocumento, Date dataNascimento, String sexo, String usuario, String senha) {

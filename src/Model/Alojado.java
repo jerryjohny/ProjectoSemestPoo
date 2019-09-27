@@ -3,23 +3,40 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author hp
  */
+@Entity(name="Alojado")
 public class Alojado {
-    private String nome;
-    private String contato;
+    @Id
+    @Column
     private String id;
+    @Column
+    private String nome;
+    @Column
+    private String contato;
+    @Column
     private String sexo;
+    @Column
     private Date nascimento;
+    @Column
     private ArrayList<Parente> parentes;
+    @Column
     private String idCentro;
+    @Column
     private boolean presente;
+    @Column
     private boolean vivo;
+    @Column
     private boolean doente;
+    @Column
     private String localizacao;
+    @Column
     private String doenca;
 
     public Alojado(String nome, String contato, String id, String sexo, Date nascimento, ArrayList<Parente> parentes, String idCentro, boolean presente, boolean doente, String localizacao, String doenca) {

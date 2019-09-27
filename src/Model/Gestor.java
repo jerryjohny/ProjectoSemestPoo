@@ -3,15 +3,22 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 /**
  *
  * @author hp
  */
+@Entity(name="Gestor")
 public class Gestor extends Funcionario{
+    @Column
     ArrayList<Operador> operadores;
+    @Column
     private String idCentro;
+    @Column
     private String usuario;
+    @Column
     private String senha;
 
     public Gestor( String nome, String contacto, String email, String tipoDeDocumento, String nrDocumento, Date dataNascimento, String sexo,String idCentro, String usuario, String senha) {

@@ -1,16 +1,23 @@
 
 package Model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *
  * @author hp
  */
+@Entity
 public class Parente {
-    
-    
-private String nome;
-private String grauParentesco;
-private String contacto;
+  @Id
+  @Column
+  private String nome;
+  @Column
+  private String grauParentesco;
+  @Column
+  private String contacto;
 
     public Parente(String nome, String grauParentesco, String contacto) {
         this.nome = nome;

@@ -40,6 +40,8 @@ public abstract class Funcionario implements Serializable{
      private Date dataNascimento;
      @Column(name="sexo")
      private  String sexo;
+     @Column
+     private String tipoFuncionario;
 
     @Override
     public String toString() {
@@ -152,6 +154,22 @@ public abstract class Funcionario implements Serializable{
 
     public void setNrDocumento(String nrDocumento) {
         this.nrDocumento = nrDocumento;
+    }
+
+    public String getTipoFuncionario() {
+        return tipoFuncionario;
+    }
+
+    public void setTipoFuncionario(String tipoFuncionario) {
+        this.tipoFuncionario = tipoFuncionario;
+    }
+
+    public String getTipoDeDocumento() {
+        return tipoDeDocumento;
+    }
+
+    public void setTipoDeDocumento(String tipoDeDocumento) {
+        this.tipoDeDocumento = tipoDeDocumento;
     }
     
 }
